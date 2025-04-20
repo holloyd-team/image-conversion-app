@@ -23,7 +23,7 @@ A web-based tool for converting images between different file formats.
 
 1. Clone this repository:
 ```
-git clone https://github.com/yourusername/image-conversion-app.git
+git clone https://github.com/holloyd-team/image-conversion-app.git
 cd image-conversion-app
 ```
 
@@ -41,7 +41,7 @@ python run.py
 
 ### With HomeTools
 
-This app can be installed and run directly from [HomeTools](https://github.com/yourusername/HomeTools).
+This app can be installed and run directly from [HomeTools](https://github.com/holloyd-team/HomeTools).
 
 ## Requirements
 
