@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Conversion Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/app-icon.svg') }}" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Conversion Tool</h1>
+            <p>Convert your images between different formats</p>
+        </header>
+        
+        <main>
+            <section class="upload-section">
+                <div class="upload-container" id="drop-area">
+                    <div class="upload-instruction">
+                        <img src="{{ url_for('static', filename='img/convert-icon.svg') }}" alt="Upload" class="upload-icon">
+                        <p>Drag and drop an image here, or</p>
+                        <label for="file-input" class="upload-btn">Browse Files</label>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                        <div class="supported-formats">
+                            <p><strong>Supported formats:</strong> JPEG, PNG, GIF, BMP, TIFF, WEBP, ICO</p>
+                        </div>
+                    </div>
+                    <div class="preview-container" id="preview-container" hidden>
+                        <img id="preview-image" src="" alt="Preview">
+                        <button id="clear-btn">Clear</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="settings-section">
+                <h2>Conversion Settings</h2>
+                <div class="format-container">
+                    <label for="format-select">Target Format:</label>
+                    <select id="format-select">
+                        <option value="PNG">PNG</option>
+                        <option value="JPEG">JPEG</option>
+                        <option value="GIF">GIF</option>
+                        <option value="BMP">BMP</option>
+                        <option value="TIFF">TIFF</option>
+                        <option value="WEBP">WEBP</option>
+                        <option value="ICO">ICO</option>
+                    </select>
+                </div>
+                
+                <div class="format-info" id="format-info">
+                    <h3>About PNG Format</h3>
+                    <p>PNG (Portable Network Graphics) is a lossless compression format that supports transparency. Ideal for graphics with sharp edges, text, or images that need to maintain high quality.</p>
+                </div>
+                
+                <div class="quality-notice">
+                    <p><strong>Quality Guarantee:</strong> All conversions preserve maximum quality. When converting to the same format, the original file is preserved with no re-encoding.</p>
+                </div>
+                
+                <button id="convert-btn" class="action-btn" disabled>Convert Image</button>
+            </section>
+            
+            <section class="results-section" id="results-section" hidden>
+                <h2>Conversion Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Original Format</h3>
+                        <p id="original-format">-</p>
+                    </div>
+                    <div class="result-card highlight">
+                        <h3>Converted Format</h3>
+                        <p id="converted-format">-</p>
+                    </div>
+                </div>
+                
+                <div class="download-container">
+                    <button id="download-btn" class="action-btn">Download Converted Image</button>
+                </div>
+            </section>
+        </main>
+        
+        <div id="loading-overlay" hidden>
+            <div class="spinner"></div>
+            <p>Converting image...</p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html> 

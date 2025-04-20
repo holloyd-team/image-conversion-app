@@ -1,0 +1,7 @@
+{
+    "name": "image-conversion-app",
+    "display_name": "Image Conversion",
+    "description": "Convert images between different formats",
+    "version": "1.0.0",
+    "icon": "static/img/app-icon.svg"
+} 
